@@ -119,4 +119,117 @@
 	\begin{equation}
 	v(t) := \lim_{\varepsilon \rightarrow 0} \frac{f(t_0+\varepsilon) - f(t_0)}{\varepsilon} 
 	\end{equation}
+	
+	\newpage
+	\textbf{Exemplo 1:} Seja $f(x) = x^2-4$ calcular o limite quando $x$ se apróxima de $1$.
+	
+	$\newline$
+	\textbf{Solução:} Verifiquemos a tabela com valores de $x$ cada vez mais próximos de $1$.
+	$\newline$
+
+	\begin{table}[h]
+	\begin{minipage}{.5\textwidth}	
+	\centering
+	\caption{$x>1$}
+	\begin{tabular}{| c | c |}
+		\hline 
+		$x$ & $f(x)$ \\ 
+		\hline 
+		2 & 0 \\ 
+		\hline 
+		1.5 & -1.75 \\ 
+		\hline 
+		1.4 & -2.04 \\ 
+		\hline 
+		1.3 & -2.31 \\ 
+		\hline 
+		1.2 & -2.56 \\ 
+		\hline 
+		1.1 & -2.79 \\ 
+		\hline 
+		1.05 & -2.8975 \\ 
+		\hline 
+		1.025 &	-2.949375\\
+		\hline
+		1.0125 & -2.97484375\\
+		\hline
+		1.00625 & -2.9874609375	\\
+		\hline 
+		1.001	& -2.99799	\\
+		\hline
+		1.0001	& -2.9997999	\\
+		\hline
+	\end{tabular} 
+	\end{minipage}
+	\begin{minipage}{.5\textwidth}
+	\centering
+	\caption{$x<1$}
+	\begin{tabular}{| c | c |}
+		\hline 
+		$x$ & $f(x)$ \\ 
+		\hline 
+		0 & -4 \\ 
+		\hline 
+		0.5 & -3.75 \\ 
+		\hline 
+		0.6 & -3.64 \\ 
+		\hline 
+		0.7 & -3.510 \\ 
+		\hline 
+		0.8 & -3.36 \\ 
+		\hline 
+		0.9 & -3.19 \\ 
+		\hline 
+		0.95 & -3.0975 \\ 
+		\hline 
+		0.96 & -3.0784 \\ 
+		\hline 
+		0.97 & -3.0591 \\ 
+		\hline 
+		0.98 & -3.0396 \\ 
+		\hline 
+		0.99 & -3.0199 \\ 
+		\hline 
+		0.995 & -3.0099 \\ 
+		\hline 
+	\end{tabular} 
+	\end{minipage}
+	\end{table}	
+
+	
+
+% Criar tabela lado a lado
+%	\begin{table}[h]
+%	\begin{minipage}{.2\textwidth}
+%	\centering
+%	\begin{tabular}{| c | c |}
+%		\hline
+%		a & b \\
+%		\hline
+%		c & d \\
+%		\hline
+%	\end{tabular}
+%	\end{minipage}
+%	\begin{minipage}{.2\textwidth}
+%	\centering
+%	\begin{tabular}{| c | c |}
+%		\hline
+%		e & f \\ 
+%		\hline
+%		g & h \\
+%		\hline
+%	\end{tabular}
+%	\end{minipage}
+%	\end{table}
+
+	$\newline$
+	
+	Das tabelas $(1)$ e $(2)$ notamos que a medida que o valores de x se aproximam de $1$ os valores para $f(x)$ ficam cada vez mais próximos de -3 podemos daí supor que o limite seria -3.
+	
+	Vejamos abaixo.
+	
+	$$\lim_{x \rightarrow 1} x^2 - 4$$
+	
+	A medida que $x \to 1$ temos $x^2 \to 1$ logo $(x^2 - 4) \to -3$. \\ 
+	Portanto $lim_{x \to 1} (x^2 -4) = -3$.
 \end{document}
