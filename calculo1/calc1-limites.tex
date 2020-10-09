@@ -26,11 +26,11 @@
 	$\linebreak$
 	Em $\textbf{(1)}$ observamos que a velocidade escalar média é a razão entre a variação do espaço percorrido $\Delta s$ em um determinado intervalo de tempo $\Delta t$. Mas contudo e se desejássemos saber a velocidade num instante $t$ ao invés do intervalo $\Delta t$.
 	
-	Imaginemos o seguinte, temos um instante qualquer $t_{1}$ e tomamos um incremento nesse tempo o qual chamaremos de $\varepsilon$.
+	Imaginemos o seguinte, temos um instante qualquer $t_{0}$ e tomamos um incremento nesse tempo o qual chamaremos de $\varepsilon$.
 	
 	$\linebreak$
 
-	\begin{tikzpicture}[scale=1.6]
+	\begin{tikzpicture}[scale=1.9]
 		\tkzInit[ xmin=-2, xmax=10,xstep=4,
 					ymin=-2, ymax=10,ystep=4]
 					
@@ -61,7 +61,7 @@
 		\tkzLabelPoints[above left](P')
 		\tkzLabelPoints[below left](O)
 		
-		\tkzPointShowCoord[xlabel={$t_0\;\;\;$},ylabel={$f(t_0)$}](P)
+		\tkzPointShowCoord[xlabel={$t_0\;\;\;\;\;\;$},ylabel={$f(t_0)$}](P)
 		\tkzPointShowCoord[xlabel=$t_1$,ylabel=$f(t_1)$](Q)
 		\tkzPointShowCoord[xlabel=$\;t_{0}+\varepsilon$,ylabel=$\;\;f(t_{0}+\varepsilon)$](P')
 		
@@ -79,7 +79,8 @@
 	
 	que é exatamente a inclinação $m_{PQ}$ da reta secante r.
 	
-	\newpage
+	$\newline$
+	
 	Tomemos agora um $P'$ qualquer sobre a curva cujas coordenadas são \\ $(t_0+\varepsilon, f(t_0+\varepsilon))$ onde $\varepsilon$ significa um pequeno incremento em $t_0$.
 	
 	A inclinação da reta secante $s$ por $PP'$ é dada por,
