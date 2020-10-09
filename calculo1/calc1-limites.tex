@@ -1,0 +1,121 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%use graphics
+\usepackage{graphicx}
+\usepackage{tikz, tkz-base, tkz-fct}
+
+\author{Wandeson Ricardo}
+\title{Cálculo 1 - Limites}
+
+\begin{document}
+	\maketitle
+	\section{Definição Intuitiva de Limite}
+	
+	Um objeto percorre uma distância ao longo do tempo t. Em um instante t qualquer desejamos saber a velocidade do objeto. Sabemos que a velocidade média escalar deste objeto é dada por $V_{m} = \frac{\Delta s}{\Delta t}$ onde $\Delta s$ é a variação do espaço e $\Delta t$ a variação do tempo ao longo daquela distância percorrida.
+	
+	Observamos que no instante de tempo $t_{inicial}$ e $t_{final}$ o objeto objeto percorreu uma distância $\Delta s$ onde $s_{incial}$ e $s_{final}$ fornecem sua posição. Podemos escrever da seguinte forma,
+	
+	\begin{equation}\label{(1)}
+	V_{m} :=  \frac{s_{final} - s_{inicial}}{t_{final} - t_{inicial}} 
+	\end{equation}
+	
+	$\linebreak$
+	Em $\textbf{(1)}$ observamos que a velocidade escalar média é a razão entre a variação do espaço percorrido $\Delta s$ em um determinado intervalo de tempo $\Delta t$. Mas contudo e se desejássemos saber a velocidade num instante $t$ ao invés do intervalo $\Delta t$.
+	
+	Imaginemos o seguinte, temos um instante qualquer $t_{1}$ e tomamos um incremento nesse tempo o qual chamaremos de $\varepsilon$.
+	
+	$\linebreak$
+
+	\begin{tikzpicture}[scale=1.6]
+		\tkzInit[ xmin=-2, xmax=10,xstep=4,
+					ymin=-2, ymax=10,ystep=4]
+					
+		%\tkzAxeX[label=$t$]
+		%\tkzAxeY[label=$v(t)$]
+
+
+					
+		\tkzDrawX[label=$t$,noticks] 
+		\tkzDrawY[label=$y$,noticks] 
+		
+		\tkzFct[domain=0:8,yrange=-2:8]{\x,(1.0/4.0)*\x**2}
+		\tkzFct[domain=0:8]{\x, 2*\x-3}
+		\tkzFct[domain=0:8]{\x,1.2125*\x-1.425}
+		
+		
+		\tkzDefPoint(2,1){P}
+		\tkzDefPoint(6,9){Q}
+		\tkzDefPoint(2.85,2.030625){P'}
+		%\tkzText[draw, color=black](2.85,-1){$x_{0}+\varepsilon$}
+	
+	
+		\tkzDefPoint(0,0){O}
+		
+		\tkzDrawPoints[size=12, fill=black](P,P',Q)
+		\tkzLabelPoints[above left](P)
+		\tkzLabelPoints[above](Q)
+		\tkzLabelPoints[above left](P')
+		\tkzLabelPoints[below left](O)
+		
+		\tkzPointShowCoord[xlabel={$t_0\;\;\;$},ylabel={$f(t_0)$}](P)
+		\tkzPointShowCoord[xlabel=$t_1$,ylabel=$f(t_1)$](Q)
+		\tkzPointShowCoord[xlabel=$\;t_{0}+\varepsilon$,ylabel=$\;\;f(t_{0}+\varepsilon)$](P')
+		
+		\tkzText[draw, fill=white, text=black](7,10){$r$}
+		\tkzText[draw, fill=white, text=black](7,6){$s$}
+		
+	\end{tikzpicture}
+
+	
+	Seja  $f(t) \;=y$ uma função de $\mathbb{R}$ em $\mathbb{R}$ que define a posição de um carro no instante t. A posição após t segundos é medida em metros. Podemos ver de $\textbf{(1)}$ que a inclinação da reta secante r que contém os pontos $P$ e $Q$ nos fornece a velocidade média no intervalo de tempo $[t_0, t_1]$. Logo,
+
+	\begin{equation}\label{(2)}
+	v_m = \frac{f(t_1) - f(t_0)}{t_1 - t_0}
+	\end{equation}
+	
+	que é exatamente a inclinação $m_{PQ}$ da reta secante r.
+	
+	\newpage
+	Tomemos agora um $P'$ qualquer sobre a curva cujas coordenadas são \\ $(t_0+\varepsilon, f(t_0+\varepsilon))$ onde $\varepsilon$ significa um pequeno incremento em $t_0$.
+	
+	A inclinação da reta secante $s$ por $PP'$ é dada por,
+	
+	
+	$$m_{PP'} = \frac{f(t_0+\varepsilon) - f(t_0)}{(t_0 + \varepsilon) - t_0}$$
+	
+	
+	ou
+	
+	\begin{equation}
+	m_{PP'} = \frac{f(t_0+\varepsilon) - f(t_0)}{\varepsilon}	
+	\end{equation}
+	
+	Tomando-se $\varepsilon$ cada vez menor, teremos um um $t_0 + \varepsilon$ cada vez mais próximo de $t_0$. Esse valor tomado cada vez menor é o que chamaremos de limite para o qual $\varepsilon$ ficará bem próximo de $0$ mas $\varepsilon \neq 0$. Em símbolos teríamos,
+
+	$$\varepsilon \longrightarrow 0 \quad talque \quad t_0+\varepsilon \longrightarrow 0$$
+	
+	Assim definimos o limite de forma intuitiva como,
+	
+	\begin{equation}
+		\lim_{\varepsilon \rightarrow 0} \frac{f(t_0+\varepsilon) - f(t_0)}{\varepsilon} = L
+	\end{equation}
+	
+	que nos fornecerá a velocidade no instante exato $t_0$. No gráfico acima de f(t) estariamos tomando o pponto $P'$ cada vez mais proximo de $P$.
+	
+	Temos também que,
+	
+	$$ m = \lim_{\varepsilon \rightarrow 0} \frac{f(t_0+\varepsilon) - f(t_0)}{\varepsilon} = L$$
+	
+	é nada mais que a equação da reta tangente da função $f$ no ponto $ P = (t_0, f(t_0))$.
+	\\
+	
+	E a velocidade no instante $t_0$, ou seja, a \textit{velocidade instantânea} seria dada por
+	
+	\begin{equation}
+	v(t) := \lim_{\varepsilon \rightarrow 0} \frac{f(t_0+\varepsilon) - f(t_0)}{\varepsilon} 
+	\end{equation}
+\end{document}
