@@ -31,7 +31,7 @@
 	$\linebreak$
 
 	\begin{tikzpicture}[scale=1.9]
-		\tkzInit[ xmin=-2, xmax=10,xstep=4,
+		\tkzInit[ xmin=-2, xmax=10,xstep=2,
 					ymin=-2, ymax=10,ystep=4]
 					
 		%\tkzAxeX[label=$t$]
@@ -61,9 +61,9 @@
 		\tkzLabelPoints[above left](P')
 		\tkzLabelPoints[below left](O)
 		
-		\tkzPointShowCoord[xlabel={$t_0\;\;\;\;\;\;$},ylabel={$f(t_0)$}](P)
+		\tkzPointShowCoord[xlabel={$\;\;t_0 \quad$},ylabel={$f(t_0)$}](P)
 		\tkzPointShowCoord[xlabel=$t_1$,ylabel=$f(t_1)$](Q)
-		\tkzPointShowCoord[xlabel=$\;t_{0}+\varepsilon$,ylabel=$\;\;f(t_{0}+\varepsilon)$](P')
+		\tkzPointShowCoord[xlabel=$t_{0}+\varepsilon$,ylabel=$\;\;f(t_{0}+\varepsilon)$](P')
 		
 		\tkzText[draw, fill=white, text=black](7,10){$r$}
 		\tkzText[draw, fill=white, text=black](7,6){$s$}
@@ -97,7 +97,7 @@
 	
 	Tomando-se $\varepsilon$ cada vez menor, teremos um um $t_0 + \varepsilon$ cada vez mais próximo de $t_0$. Esse valor tomado cada vez menor é o que chamaremos de limite para o qual $\varepsilon$ ficará bem próximo de $0$ mas $\varepsilon \neq 0$. Em símbolos teríamos,
 
-	$$\varepsilon \longrightarrow 0 \quad talque \quad t_0+\varepsilon \longrightarrow 0$$
+	$$\varepsilon \longrightarrow 0 \quad talque \quad t_0+\varepsilon \longrightarrow t_0$$
 	
 	Assim definimos o limite de forma intuitiva como,
 	
@@ -105,7 +105,7 @@
 		\lim_{\varepsilon \rightarrow 0} \frac{f(t_0+\varepsilon) - f(t_0)}{\varepsilon} = L
 	\end{equation}
 	
-	que nos fornecerá a velocidade no instante exato $t_0$. No gráfico acima de f(t) estariamos tomando o pponto $P'$ cada vez mais proximo de $P$.
+	que nos fornecerá a velocidade no instante exato $t_0$. No gráfico acima de f(t) estaríamos tomando o ponto $P'$ cada vez mais próximo de $P$.
 	
 	Temos também que,
 	
