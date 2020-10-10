@@ -1,0 +1,58 @@
+\section{Limites Laterais}
+Uma condição fundamental para existência do limite é que o limite esquerdo e o limite direito ambos sejam iguais. Ou seja,
+
+	$$\lim_{x \to a^{+}}f(x) = \lim_{x \to a^{-}}f(x) = L$$
+	
+	Quando escrevemos $\lim_{x \to a^{+}} f(x)$ estamos a querer dizer que os valores $x$ se aproximam de $a$ pela direita, ou seja, $x$ se torna cada vez mais próximo de a contudo $x > a$. Já quando estamos a falar de $\lim_{x \to a^{-}} f(x)$ estamos a querer dizer que estamos tomando valores de $x$ próximos de $a$ pela esquerda contudo $\mathbf{x<a}$.
+	$\linebreak$
+	
+	\textbf{Exemplo}: Tomemos como exemplo a função $f(x) = |x|$. Calcular o $\lim_{x \to 0} f(x)$.
+	$$\linebreak$$
+	\textbf{Solução}: Sabemos que,
+		\[ f(x) =
+			\begin{cases}
+			x & \quad \text{if } x \geq 0 \\
+			-x & \quad \text{if } x < 0
+			\end{cases}
+		\]
+		
+		Tomemos o limite de $f(x)$ para valores de $x$ maiores que zero.
+		Como estamos interessados em $x \geq 0$, temos que
+		
+			$$ \lim_{x \to 0} |x| = \lim_{x \to 0^{+}} x = 0 $$
+			
+		para $x \to 0^{-}$, ou seja, $x$ tendendo a $0$ pela esquerda, onde $x < 0$, temos
+		
+			$$ \lim_{x \to 0} |x| = \lim_{x \to 0^{-}} -x = 0$$
+			
+		logo o limite existe, como $\lim_{x \to 0^{+}} x = \lim_{x \to 0^{-}} (-x) = 0$.
+		
+		$$\linebreak$$
+		
+		Tomemos agora o exemplo, $f(x) = \frac{|x|}{x}$.
+		
+		Vejamos o limite direito de $f(x)$, sabemos que $x \to 0$, têm-se $ x \geq 0$,
+		
+			$$\lim_{x \to 0^{+}} \frac{|x|}{x} = \lim_{x \to 0^{+}} \frac{x}{x} = \lim_{x \to 0^{+}} 1 = 1$$
+			
+		porém para $x \to 0^{-}$, onde $x<0$, observamos que,
+			
+			$$\lim_{x \to 0}\frac{|x|}{x} = \lim_{x \to 0^{-}} \frac{(-x)}{x} = \lim_{x \to 0^{-}} (-1) = -1$$
+			
+		logo,
+		
+			$$\lim_{x \to 0^{+}} \frac{|x|}{x} \neq \lim_{x \to 0^{-}} \frac{|x|}{x}$$
+			
+		portanto o limite $\lim_{x \to 0} \frac{|x|}{x}$ não existe.
+		
+		\newtheorem*{mydeftheorem}{Existência do Limite}
+		\begin{mydeftheorem}
+			Seja $f(x) = y$ uma função de $\mathbb{R}$ em $\mathbb{R}$. O limite,
+				$$\lim_{x \to a} f(x) $$
+			existe se, e somente se,
+				$$\lim_{x \to a^{+}} f(x)= \lim_{x \to a^{-}} f(x)$$
+				
+			ou seja, os limites esquerdo e direitos forem iguis.
+		\end{mydeftheorem}
+		
+			
