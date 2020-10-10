@@ -1,4 +1,0 @@
-\select@language {brazil}
-\select@language {brazil}
-\contentsline {section}{\numberline {0.1}Defini\IeC {\c c}\IeC {\~a}o Intuitiva de Limite}{2}
-\contentsline {section}{\numberline {0.2}Leis dos Limites}{4}
