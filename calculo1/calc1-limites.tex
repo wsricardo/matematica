@@ -2,6 +2,7 @@
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 %use graphics
@@ -13,6 +14,9 @@
 
 \begin{document}
 	\maketitle
+	\tableofcontents
+	\newpage
+	
 	\section{Definição Intuitiva de Limite}
 	
 	Um objeto percorre uma distância ao longo do tempo t. Em um instante t qualquer desejamos saber a velocidade do objeto. Sabemos que a velocidade média escalar deste objeto é dada por $V_{m} = \frac{\Delta s}{\Delta t}$ onde $\Delta s$ é a variação do espaço e $\Delta t$ a variação do tempo ao longo daquela distância percorrida.
@@ -232,4 +236,6 @@
 	
 	A medida que $x \to 1$ temos $x^2 \to 1$ logo $(x^2 - 4) \to -3$. \\ 
 	Portanto $lim_{x \to 1} (x^2 -4) = -3$.
+	
+	\input{calc1-limites-propriedades}
 \end{document}
