@@ -1,0 +1,32 @@
+% Gráficos Coordenadas Polares
+
+\begin{tikzpicture}[scale=1.2]
+
+	\tkzInit[ xmin=-2, xmax=10,xstep=2,
+				ymin=-2, ymax=10,ystep=4]
+	
+	%\tkzDrawX[label=$x$,noticks] 
+	%\tkzDrawY[label=$y$,noticks] 
+	\draw [->] (0,0) node[align=left, below]{O} -- (1.98,1.98) node[align=left, above]{P}; % Point P = (2,2).
+	\draw [->] (0,0) node[align=left,below]{O} -- (6,0) node[align=left, above]{X};
+	\draw [->] (0,0) node[align=left,below]{} -- (0,4) node[align=left, above]{};
+	\draw [->] (0,0) -- (2,0); % Vetor OA
+	\draw [->] (0,0) -- (0, 2); % Vetor OB
+	\draw [dashed] (2,0) -- (2,2);
+	\draw [dashed] (0,2) -- (2,2);
+	\filldraw (2,2) circle (1pt);
+	\draw [->] (0.9,0) arc (0:45:9mm);
+	\draw[dashed] (2.82843,0) arc (0:90:2.82843);
+	\draw(-0.3,3.9) node(y){$Y$}; % OB
+	\draw(2,-0.2) node(x){$A$}; % OA
+	\draw(-0.2, 2) node(y){$B$};
+	\draw(1.2,0.2) node[align=right, above]{$\theta$};
+	\draw(0.6,1.2) node[align=left, below]{$r$};
+	
+	\draw (1.2,-0.2) node(x){$r cos(\theta)$}; % Vetor OA
+	\draw (-0.5, 1.3) node(y){$r sen(\theta)$}; % Vetor OB
+	
+	
+				
+
+\end{tikzpicture}

@@ -1,0 +1,46 @@
+\documentclass[a4paper, 16pt]{paper}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%use graphics
+\usepackage{graphicx}
+\usepackage{tikz, tkz-base, tkz-fct}
+
+%\title{Coordenadas Polares}
+%\author{Wandeson Ricardo}
+
+\begin{document}
+%\maketitle
+\section{Sistema de Coordenadas Polar}
+
+\input{graficosCoorPolares}
+
+Seja $r \in \mathbb{R}$ e $\theta$ um ângulo em radianos temos o par $(r, \theta)$ que descreve o ponto $P$ no sistema de coordenadas polar onde $r \geq 0$ e $0 \leq \theta \leq 2\pi$ e o ponto $O$ é o polo do sistema. Por definição o sentido anti-horário é positivo, ou seja, $\theta \geq 0$.
+
+\input{graficosCoorPolares2}
+
+No gráfico acima observamos que o ponto $P$ tem coordenadas cartesianas $(x,y) = (r cos(\theta), r sen(\theta))$. 
+Do Teorema de Pitágoras no triângulo $OAP$ temos que $r^2 = x^2 + y^2$ que é a distância da origem $O$ ao ponto $P$, ou seja, o comprimento do segmento de reta $\overline{OP}$ e também a distância de $O$ até $P$ que é $r$. 
+
+$\newline$
+
+Temos assim as seguintes relações abaixo,
+
+
+\begin{align*}
+x = r cos(\theta) \\
+y = r sen(\theta) \\
+r^2 = x^2 + y^2 \\
+tan(\theta) = \frac{y}{x}
+\end{align*}
+
+
+Tendo $(x,y)$ podemos obter $\theta$ usando $ \theta = arctan(\frac{y}{x}) $. Daí decorre que as coordenadas para o ponto $P=(x,y)$  em coordenadas polar é dada por
+ $$(r, \theta ) = (\sqrt{(x^2+y^2)},\; arctan(\frac{y}{x}))$$,
+ 
+onde $\theta$ é dado em radianos.
+
+\end{document}
