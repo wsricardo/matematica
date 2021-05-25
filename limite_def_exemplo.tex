@@ -1,0 +1,51 @@
+\documentclass[a4,12pt]{paper}
+% Package language definition. Using your language
+\usepackage[portuguese]{babel}
+% Input type | characters.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Package AMS
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb, amsthm}
+
+
+\newtheorem{definition}{Definição} 
+
+\begin{document}
+\textbf{Cálculo 2 - Limite à Duas Variáveis}
+
+\begin{definition}
+	Seja $f$ uma função cujo domínio $D\subset \mathbb{R}^2$  contém pontos arbitrariamente próximos de $(a,b)$. Dizemos que o \textbf{limite de $f(x,y)$ quando $(x, y)$ tende a $(a, b)$} é $L$ e escrevemos
+	
+	$$ \lim_{(x,y) \to (a,b)} f(x,y) = L $$
+	
+	se para todo número $\epsilon > 0$ existe um número correspondente $\delta > 0$ tal que se $(x, y) \in D$ e $ 0 < \sqrt{(x-a)^2 + (y - b)^2} < \delta $ então $ |f(x, y) - L| < \epsilon $. \\
+	
+\end{definition}
+
+\textbf{Exemplo:} Verificar que $\lim_{(x,y) \to (0,0)} \frac{3x^2y}{x^2 + y^2} = 0$. \\ 
+
+Seja $ \epsilon > 0$, queremos determinar um $\delta > 0$ tal que se \\ 
+
+
+$0 < \sqrt{x^2+y^2} < \delta$ então $ |\frac{3x^2y}{x^2+y^2}| < \epsilon$ \\
+
+
+Considerando $x^2 > 0$ e $y^2 > 0$, como $x^2+y^2 > 0$ e $3x^2y>0 \; se \; y\geq 0 \; e \; 3x^2y < 0 \; se \; y < 0$ com $(x, y) \in D \subset \mathbb{R}^2$,  temos \\
+
+$ 0 < \sqrt{x^2 + y^2} < \delta \; então \; \frac{3x^2|y|}{x^2+y^2} < \epsilon  $ \\ \\
+
+Como $ y^2 \geq 0$ logo $x^2+ y^2 \geq x^2$ assim $ \frac{x^2}{x^2+y^2} \leq 1 $ e portanto
+
+$$ \frac{3x^2|y|}{x^2+y^2} \leq (3|y|) = 3\sqrt{y^2} < 3\sqrt{x^2+ y^2} $$
+
+
+Como, se $3\sqrt{x^2 + y^2} < \epsilon$ logo $ \frac{3x^2|y|}{x^2+y^2} < \epsilon$ assim se escolhermos $\delta = \frac{\epsilon}{3}$ e fizermos $0 < \sqrt{x^2+y^2} < \delta $ tal que, \\
+
+$ 3\sqrt{x^2+y^2} < \epsilon  $ de forma que $ \frac{3x^2|y|}{x^2+y^2} < \epsilon $ obtendo-se $ \sqrt{x^2 + y^2} < \frac{\epsilon}{3}$. \\ \\
+
+Assim se escolhermos $ \delta = \frac{\epsilon}{3}$ e fizermos $ 0 < \sqrt{x^2+ y^2 < \delta} $ teremos,
+
+$$ |\frac{3x^2y}{x^2+y^2}| < 3\sqrt{x^2+y^2} < 3 \delta = 3(\frac{\epsilon}{3}) = \epsilon $$.
+\hspace{320pt} \textit{$\square$}
+
+\end{document}
