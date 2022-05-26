@@ -1,0 +1,7 @@
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {0.1}Definição Intuitiva de Limite}{2}{}%
+\contentsline {section}{\numberline {0.2}Leis dos Limites}{5}{}%
+\contentsline {section}{\numberline {0.3}Limites Laterais}{5}{}%
+\contentsline {section}{\numberline {0.4}Continuidade}{7}{}%
+\contentsline {section}{\numberline {0.5}Limites no Infinito}{7}{}%
