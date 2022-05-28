@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.23)  26 MAY 2022 19:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.23)  27 MAY 2022 07:44
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1361,8 +1361,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \sift@deathcycles=\count383
 \@vwid@loff=\dimen365
 \@vwid@roff=\dimen366
-))
-No file determinante.aux.
+)) (determinante.aux)
 \openout1 = `determinante.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -1383,6 +1382,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1460,6 +1460,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 28.
 LaTeX Info: Redefining \pageref on input line 28.
 LaTeX Info: Redefining \nameref on input line 28.
+ (determinante.out) (determinante.out)
 \@outlinefile=\write5
 \openout5 = `determinante.out'.
 
@@ -1549,35 +1550,34 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into
 your preamble.
  on input line 28.
 
-No file determinante.nav.
-[1
+(determinante.nav) [1
 
 {C:/Users/wsric/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
 
 
 (C:\Users\wsric\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
 
 
 (C:\Users\wsric\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OMS+rsfs on input line 
-51.
+50.
 
 (C:\Users\wsric\AppData\Local\Programs\MiKTeX\tex/latex/calrsfs\omsrsfs.fd)
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 51.
+ut line 50.
 
 (C:\Users\wsric\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
 erncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-Overfull \vbox (0.64975pt too high) detected at line 51
+Overfull \vbox (0.64975pt too high) detected at line 50
  []
 
 [2
@@ -1586,7 +1586,7 @@ Overfull \vbox (0.64975pt too high) detected at line 51
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1594,7 +1594,7 @@ you left one out. Proceed, with fingers crossed.
 ! Display math should end with $$.
 <to be read again> 
                    \tex_par:D 
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
@@ -1602,7 +1602,7 @@ So I shall assume that you typed `$$' both times.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1610,7 +1610,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1618,7 +1618,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1626,7 +1626,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1638,7 +1638,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1647,7 +1647,7 @@ or  <return>  to continue without it.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1658,13 +1658,13 @@ my insertion and my current dilemma will both disappear.
 ! Display math should end with $$.
 <to be read again> 
                    \endgroup 
-l.92 	\end{frame}
+l.91 	\end{frame}
                  
 The `$' that I just saw supposedly matches a previous `$$'.
 So I shall assume that you typed `$$' both times.
 
 
-Overfull \vbox (10.52127pt too high) detected at line 92
+Overfull \vbox (10.52127pt too high) detected at line 91
  []
 
 [3
@@ -1680,20 +1680,14 @@ Overfull \vbox (10.52127pt too high) detected at line 92
 \openout8 = `determinante.snm'.
 
  (determinante.aux)
-
-Package rerunfilecheck Warning: File `determinante.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `determinante.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `determinante.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42444 strings out of 478552
- 1011106 string characters out of 2841938
- 1407080 words of memory out of 3000000
- 59776 multiletter control sequences out of 15000+600000
+ 42463 strings out of 478552
+ 1011585 string characters out of 2841938
+ 1407079 words of memory out of 3000000
+ 59787 multiletter control sequences out of 15000+600000
  477107 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,122p,732b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1710,7 +1704,7 @@ Users/wsric/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8
 .pfb><C:/Users/wsric/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb><C:/Users/wsric/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 amsfonts/symbols/msam10.pfb>
-Output written on determinante.pdf (3 pages, 119829 bytes).
+Output written on determinante.pdf (3 pages, 119828 bytes).
 PDF statistics:
  112 PDF objects out of 1000 (max. 8388607)
  7 named destinations out of 1000 (max. 500000)
