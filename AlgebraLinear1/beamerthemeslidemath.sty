@@ -1,0 +1,138 @@
+% Own theme
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+
+% Settings
+%\useinnertheme{texsx}
+%\useoutertheme{texsx}
+%\usecolortheme{texsx} 
+%\useoutertheme{infolines}
+% Settings
+\setbeamersize{text margin left=4mm,text margin right=4mm} 
+
+\setbeamercolor*{title page header}{fg=blue!90!cyan!70}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{institute}{fg=white}
+\setbeamercolor*{item}{fg=blue!90!cyan!70}
+%\setbeamercolor*{example}{fg=blue!90!cyan!70}
+
+\setbeamercolor*{block title}{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block body}{fg=black, bg=orange!80!cyan!70}
+
+\setbeamercolor*{block title example}{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block body example}{fg=black, bg=orange!80!cyan!70}
+\setbeamercolor*{block title definition}{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block title theorem}{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block title lemma }{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block title corollary }{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block title fact }{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block title lemma}{fg=white, bg=blue!90!cyan!70}
+\setbeamercolor*{block title proofs}{fg=white, bg=blue!90!cyan!70}
+% Settings
+
+% Items
+\setbeamertemplate{items}[square]
+%\setbeamertemplate{sections/subsections in toc}[square]
+
+% Examples
+\setbeamertemplate{example}[square]
+\setbeamertemplate{example}{bg=blue!90!cyan!70}
+
+\setbeamertemplate{definition}[square]
+\setbeamertemplate{definition}{bg=blue!90!cyan!70}
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+%\setbeamertemplate{frametitle}{8pt}
+%\setbeamerfont{frametitle}{family=\rfamily, series=\bfseries, size={\fontsize{14}{18}}}
+\setbeamerfont{frametitle}{family=\rmfamily,series=\bfseries,size={\fontsize{14}{16}}}
+\setbeamertemplate{frametitle}
+{
+	\vspace{-2pt}
+	%\color{blue!90!cyan!70}
+	\color{white}
+	\insertframetitle%
+	\par
+}
+\setbeamercolor{footline}{fg=white}
+%\setbeamerfont{footline}{series=\bfseries}
+
+
+\setbeamertemplate{background}{
+	\begin{tikzpicture}
+		\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		\fill[color=blue!90!cyan!70] (0,\the\paperheight - 10) rectangle (\the\paperwidth,\the\paperheight);
+		\fill[color=orange!80!cyan!70] (0,0) rectangle(2.95,2.9);
+		\fill[color=blue!90!cyan!70] (3.05,0) rectangle(\the\paperwidth,2.9);
+		\ifnum\thepage>1\relax%
+		\fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		\fi
+		
+		\ifnum\thepage>1\relax%
+		\fill[color=orange!80!cyan!70] (0,0 ) rectangle (\the\paperwidth, 0.32);
+		\fill[color=blue!90!cyan!70] (0,\the\paperheight - 17) rectangle (\the\paperwidth,\the\paperheight);
+		\fi
+	\end{tikzpicture}
+}
+
+%%% Footnote with info like title, author slide number.
+%%% Bugs in this parts.
+\defbeamertemplate*{footline}{slidemath}[1][]{
+	\ifnum\thepage>1\relax%
+	\vspace{-2pt}%
+	\hspace{2pt}%
+	\begin{beamercolorbox}[wd=1cm, leftskip=12cm, #1]{title page header}
+		\usebeamerfont{footline}%
+		\usebeamercolor[fg]{footline}%
+		\insertframenumber/\inserttotalframenumber %
+	\end{beamercolorbox}
+	\hspace{-18pt}%
+	\begin{beamercolorbox}[wd=5cm, leftskip=.01cm, #1]{title page header}
+		\usebeamerfont{footline}%
+		\usebeamercolor[fg]{footline}%
+		\insertauthor\par%
+	\end{beamercolorbox}
+	\hspace{2pt}%
+	\begin{beamercolorbox}[wd=8cm, leftskip=.01cm, #1] {title page header}
+		\usebeamerfont{footline}%
+		\usebeamercolor[fg]{footline}%
+		\inserttitle\par%
+	\end{beamercolorbox}
+	\hspace{2pt}%
+	\fi
+}
+%%%
+
+\defbeamertemplate*{page}{slidemath}{
+	\vspace{24pt}
+}
+% Title page
+\defbeamertemplate*{title page}{slidemath}[1][]
+{ 
+	\vskip2cm%
+	\begin{beamercolorbox}[wd=12cm, leftskip=3cm, #1]{title page header}
+		\usebeamerfont{title}\inserttitle\par%
+	\end{beamercolorbox}%
+	\vskip4cm%
+	\begin{beamercolorbox}[wd=12cm, leftskip=3cm, #1]{institute  }
+		\usebeamerfont{institute}\insertinstitute\par%
+	\end{beamercolorbox}
+	\vskip.1cm%
+	\begin{beamercolorbox}[wd=12cm,leftskip=3cm, #1]{author}
+		\usebeamerfont{author}\insertauthor%
+	\end{beamercolorbox}
+	\vskip.1cm%
+	\begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+		\usebeamerfont{author}\insertdate%
+	\end{beamercolorbox}
+	\vfill
+}
+
+
+
+\mode<all>
