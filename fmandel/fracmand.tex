@@ -1,0 +1,387 @@
+% fracmand - Fractal mandelbrot set
+\documentclass[12pt,a4paper]{article}
+%\usepackage[left=1.00cm, right=1.00cm, top=1.00cm, bottom=1.00cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[portuguese]{babel}
+\usepackage{algorithmic}
+
+\title{Fractal - Desenhando Conjunto Mandelbrot}
+\author{Wandeson Ricardo da Silva}
+\begin{document}
+\maketitle
+
+\section{Introdução}
+	Fractais são estruturas geométricas que preservam autosimilaridade em escalas infinitas, ou seja, uma parte do objeto é igual ou assemelha-se ao todo. O termo foi cunhado pelo matemático Benoít Mandelbrot nos anos de 1970 quando através de recursos computacionais foi possível enxergar a riqueza e a beleza destas estruturas.
+	
+\subsection{Números Complexos}
+
+\textbf{Definição.}
+	Seja $z \in \mathbb{C}$, um número complexo, temos $z = a + bi$ onde $a,b \in \mathbb{R}$ e $i = \sqrt{-1}$, sendo $a$ a chamada de parte real e $b$ a parte imaginária, ou seja, $Real(z) = a$ e $Imag(z) = b$.\\
+	
+	Dois números complexos $z_1$ e $z_2$ são iguais se dados $z_1 = a_1 + b_1i$ e $z_2 = a_2 + b_2i$ tenhamos $a_1=a_2$ e $b_1 = b_2$. \\
+	 
+	Algumas operações sobre complexos $z_1$ e $z_2$ são dadas abaixo. Dados $z_1 = a_1 + b_1i$ e $z_2 = a_2 + b_2i$.
+	
+	
+	\textbf{(1).} Conjugado de um $z = a + bi$ é dado por $\bar{z} = a - bi$
+
+	\textbf{(2).} Módulo de $z = a + bi$ temos $|z| = \sqrt{a^2 + b^2}$
+	
+	\textbf{(3).} Inverso multiplicativo $\frac{1}{z} = \frac{\bar{z}}{z\bar{z}}$
+		
+	\textbf{(4).} Soma: $z = (a_1 + a_2 )+ (b_1 + b_2)i$ 
+	
+	\textbf{(5).} Multiplicação: $ z_1 \cdot z_2 = (a_1 + b_1 i)\cdot(a_2 + b_2 i) = a_1 a_2 + a_1b_2i + a_2b_1i + b_1b_2i^2 = (a_1a_2 - b_1b_2) + (a_1b_2 + a_2b_1)i$.
+	
+	\textbf{(6).} Quociente $\frac{z_1}{z_2}$ com $z_2 \neq 0$, $\frac{z_1}{z_2} = z_1 \left( \frac{1}{z_2}\right) = z_1 \left( \frac{\bar{z_2}}{z_2\bar{z_2}}\right) = \frac{z_1\bar{z_2}}{z_2\bar{z_2}}$
+	
+	\newpage
+	
+	\textbf{Proposição.} Se $z_1$ e $z_2$ são números complexos onde $z_1 = a + bi$ e $z_2 = c + di$ temos.
+	
+	\textbf{(a).} $z\bar{z} = a^2 + b^2 = |z|^2$.
+	
+	\textbf{(b).} $\overline{z_1z_2} = \bar{z_1}\bar{z_2}$.
+	
+	\textbf{(c).} $\overline{(z_1 + z_2)} = \bar{z_1} + \bar{z_2}$.\\
+		
+	
+	\subsubsection{Trigonometria Nos Números Complexos }
+	
+
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{trig}
+		\caption{Triângulo retângulo $ABC$.}
+		\label{fig:trig}
+	\end{figure}
+
+
+	Da trigonometria lembramos que,\\
+	
+	\textbf{(a).} $\sin(\theta) = \frac{b}{h}$
+	
+	\textbf{(b).} $\cos(\theta) = \frac{a}{h}$
+	
+	\textbf{(c).} $\tan(\theta) = \frac{\cos(\theta)}{\sin(\theta)} = \frac{a}{b}$, $\sin(\theta) \neq 0$\\
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{trig2}
+		\caption{Eixo $XY$, com $\mathit{O} = (0,0)$ origem. Coordenadas $z = a + bi$.}
+		\label{fig:trig}
+	\end{figure}
+	
+	
+	Podemos escrever o número complexo $z = a + bi$ em sua forma trigonométrica, como,
+	
+	$$z = r( \cos (\theta) + \sin (\theta)i)$$
+	\noindent
+	onde $r = |z| = \sqrt{a^2 + b^2}$, $\overline{OA} = r\cos(\theta)$ e $\overline{AB} = r\sin(\theta)$.
+	Pois $a = r\cos(\theta)$ e $b = r\sin(\theta)$ (Figura 2.).\\
+	
+	\noindent
+	\textbf{Proposição.} Seja $n \in \mathbb{Z}$, $\theta \in \mathbb{R}$ e $z \in \mathbb{C}$. Temos válida a fórmula,
+	$$  z^n = \left( a + bi \right)^n = \cos(n\theta) + i\sin(n\theta)$$
+
+	\noindent
+	conhecida como \textit{Fórmula de pontenciação de De Moivre}.
+	
+	
+	
+\newpage
+\section{Conjunto Mandelbrot}
+	Um exemplo de fractal é o \textit{Conjunto Mandelbrot} definido pela primeira vez em 1905 por Pierre Fatou que tentou desenhar a mão seus gráficos mas sem exito.Com advento da computação, o matemático Benoít Mandelbrot foi o primeiro que desenhou este conjunto.
+	
+\subsection{Definição}
+	Dados os pontos $C = x+yi$ no plano \textit{complexo} $\mathbb{C}$ para o qual é definida uma sequência recursiva $Z_n$ limitada com $n \to \infty$ dada por,
+	
+	$$Z_0 = 0$$
+	
+	$$ Z_{n+1} = Z_{n}^{2} + C$$.
+	
+	Para cada $C \in \mathbb{C}$, a sequência é expandida como,
+
+	\[
+		\begin{cases}
+			C &= x + iy \\
+			Z_0 &= 0 \\
+		\end{cases}
+	\]
+	\begin{align*}
+		Z_1 &= Z_0^2 + C \\
+		\qquad {} &= x + iy \\
+		Z_2 &= Z_1^2 + C \\
+			&= (x + iy)^2 + (x + iy) \\
+			&= x^2 + 2xyi + (iy)^2 + (x + iy) = x^2 + 2xyi - y^2 + x + iy \\
+			&= (x^2 + x - y^2) + (2xy + y)i \\
+		Z_3 &= Z_2^2 + C \\
+			&= [ (x^2 + x - y^2) + (2xy + y)i ]^2 + (x + iy) \\
+			&= (x^2 + x - y^2)^2 + 2(x^2 + x - y^2 )(2xy +y)i + [ ( 2xy + y)i ]^2 + ( x + iy ) \\
+			&= (x^2+ x - y^2)^2 - (2xy + y)^2 + 2(x^2 + x - y^2)(2xy + y)i + (x + iy) \\
+			&= [ (x^2 + x - y^2)^2 - (2xy + y)^2 + x ] + [2(x^2 + x - y^2)(2xy + y) + y]i \\
+		&\vdots \\
+		Z_n &= Z_{n - 1}^2 + C \\
+		Z_{n+1} &= Z_n^2 + C
+	\end{align*}
+	\\
+	
+	Reescrevendo $x_n$ e $y_n$ em termos das partes reais e imaginárias de $Z_n$, onde $Z_n = x_n + y_{n}i$. Fazendo,
+	
+	\begin{align}
+		C &= a + bi &{} \\
+		Z_0 &= 0 = x_0 + iy_0, &\qquad \qquad x_0=0 \; e \; y_0=0\\
+		Z_{n} &= Z_{n-1}^2 + C  &\qquad \qquad com \; Z_n = x_n + iy_n
+	\end{align}
+
+	temos,
+	
+	\begin{align*}
+		Z_{n} &= Z_{n-1}^2 + C \\
+			&= ( x_{n-1} + iy_{n-1} )^2 + (a + bi) \\
+			&= x_{n-1}^2 + 2x_{n-1}y_{n-1}i - (y_{n-1})^2 + a + bi
+	\end{align*}
+	
+	escrevemos,
+	
+	\begin{align}
+		x_n &= x_{n - 1}^2 - y_{n-1}^2 + a \\
+		y_n &= 2x_{n-1}y_{n-1} + b
+	\end{align}
+
+	onde $x_n$ é a parte real e $y_n$ é a parte imaginária.
+
+\newpage
+\section{Gráfico - Desenhando Pontos do Conjunto Mandelbrot }
+
+
+	
+	\subsection{Imagem Digital}
+	
+	Trabalhando em uma tela de exibição que é um recorte, ou seja, um retângulo,
+	
+	 $$\mathfrak{R} = [a, b]\times[c, d] = \left\{ (x, y) \in \mathbb{R} | a \leq x \leq b \; e \; c \leq y \leq d \right\}$$
+	 
+	\noindent 
+	o qual defini-se a tela no plano $XY$. Nesta tela de renderização teremos os pontos do conjunto Mandelbrot fazendo-se corresponder estes a uma matriz $A$ $m \times n$ onde cada $a_{i,j}$ é um pixel da imagem a ser gerada do conjunto.\\
+	
+	\noindent
+	Tomando-se dominio $\mathfrak{R}$, discretizamos este retângulo, tal que tenhamos,
+	
+	$$ \Delta = \left\{ (x_j, y_k ) \in \mathfrak{R} | x_j= j \Delta x \; e \; y_k = k \Delta y; j,k \in \mathbb{Z}, \Delta x, \Delta y \in \mathbb{R}   \right\} $$
+	
+	\noindent
+	onde,
+	
+	{\large 
+	\[
+		\begin{cases}
+			\Delta x = \frac{(b - a)}{n} \\ \\
+			\Delta y = \frac{ ( d - c )}{m}
+			
+		\end{cases}
+	\]}
+	
+	Temos $a_{i,j} \in \mathcal{K}$ onde $\mathcal{K}$ é o espaço de cor a ser adotado na imagem. Afim de simplificar usaremos a imagem $A$ em escalas de cinza tal que cada $a_{i,j} \in [0, 255] \subset \mathbb{Z}$, para armazenar-se na matriz da imagem a ser gravada em um arquivo modo texto no formato \textbf{PPM}.
+	
+	
+	Usamos o formato PPM em modo texto para salvar arquivo da imagem pois o mesmo possui especificação simples não requerendo assim bibliotecas externas. \\
+	
+	\newpage
+	\noindent
+	\subsection{Especificação Usadas Formato PPM}
+	
+	Primeira linha do arquivo \textbf{PPM} é iniciado com \textit{P2} ou \textit{P3} para definir imagens preto e branco ou coloridas respectivamente. Para imagens coloridas é usado o sistema de cor RGB onde temos um vetor com três componentes para as cores vermelho (R), verde (G) e azul (B). Em seguida é especificado as dimensões da imagem, largura e altura e número de cores suportadas por cada componente do sistema de cor. As linhas seguintes são os valores para o pixeis na imagem, quais percorre-se de cima para baixo da direita para esquerda. \\
+	
+	\textbf{Exemplo:} Uma imagem preto e branco de dimensões 5 por 4.
+
+	\noindent
+	P2 \\
+	5 4 \\
+	255 \\
+	255 \\
+	0 \\
+	0 \\
+	0 \\
+	255 \\
+	255 \\
+	255 \\
+	0 \\
+	255 \\
+	255 \\
+	255 \\
+	255 \\
+	0 \\
+	255 \\
+	255 \\
+	255 \\
+	255 \\
+	0 \\
+	255 \\
+	255 \\
+	
+	\noindent
+	O exemplo acima é uma imagem da letra.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{lett}
+		\caption{Imagem letra "T" salva no formato \textbf{PPM}.}
+		\label{fig:lett}
+	\end{figure}
+	
+	
+	A matriz para imagem é ilustrada abaixo.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\linewidth]{matrixppm}
+		\caption{Tabela Imagem matrix A 4 linhas por 5 colunas. \textbf{PPM}.}
+		\label{fig:lett}
+	\end{figure}
+	
+
+	Para a tabela acima conforme o formato os valores são postos no arquivo como se segue. \\
+
+	\noindent	
+	P2\\
+	5 4\\
+	255\\
+	$a11$\\
+	$a12$\\
+	$a13$\\
+	$a14$\\
+	$a15$\\
+	$a21$\\
+	$a22$\\
+	\vdots\\
+	$a45$\\
+
+	
+	Para uma imagem colorida usamos \textit{P3} e os valores para RGB são colocados um pós o outro conforme o pixel as componentes de sua cor. Processo assemelha-se ao acima.\\
+	
+	\noindent
+	P3 \\
+	255 \\
+	5 4 \\
+	$a11_{red}$\\
+	$a11_{green}$\\
+	$a11_{blue}$\\
+	$a12_{red}$\\
+	$a12_{green}$\\
+	$a12_{blue}$\\
+	\vdots\\
+	$a45_{red}$\\
+	$a45_{green}$\\
+	$a45_{blue}$\\
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1.1\linewidth]{../../formatoppm}
+		\caption{Exemplo de imagem colorida no formato PPM em texto.}
+		\label{fig:formatoppm}
+	\end{figure}
+	
+	
+	
+	%O centro $\mathcal{O} = (0,0)$ do sistema $XY$ é transladado para o centro $\mathcal{O'}$ de $X'Y'$ no retângulo $\mathfrak{R}$, no qual temos $\mathcal{O'} = \left( x_0, y_0 \right)$ como,
+	%
+	%	 $$x_0 = \frac{\left( a + c\right)}{2}$$
+	%	 
+	%	 $$y_0 = \frac{\left( b + d \right)}{2}$$
+	%
+	%sendo as coordenadas da nova origem.
+	
+	\newpage
+	
+	\subsection{O Algoritmo}
+
+	\algsetup{indent=2em}
+	\begin{algorithmic}[1]
+		\STATE \textbf{Algorithm} \text{Function for calculate point of the Mandelbrot Set to draw your figure.}
+		\STATE $W \in \mathbb{Z}$, $H \in \mathbb{Z}$, $max\_interaction \in \mathbb{N}$
+		\STATE \COMMENT{$\mathfrak{ R} = [a, b] \times [c, d] = \{ (x,y) \in \mathbb{R} | a \leq x \leq b \; e \; c \leq y \leq d\}$.}
+
+		
+		\STATE $ A = [a_{i,j}], \; with \; i=1,...,m \; and \; j=1,...,n \; where \; a_{i,j}  \;\in \{ n | n \in \mathbb{Z} \; and \; 0 \leq n \leq 255 \}$
+		
+		\STATE $a = -2$, $b = 1.5$
+		\STATE $c = -2.0$, $d = 2.0$ 
+
+		\STATE \COMMENT{The $ratio$ is Factor to scale image from W (Width) and Height (H).}
+		\STATE  $ratio = \frac{W}{H}$ 
+		
+		
+		\IF{$ratio < 1$} 
+			\STATE $c = ratio \times c$
+			\STATE $d = ratio \times d$
+			
+		\ELSE 
+			\STATE $a = ratio \times a$
+			\STATE $b = ratio \times b$
+		\ENDIF
+
+		 
+		 \STATE x, y = 0, 0 \COMMENT{Point in plane $XY$.}
+		 
+		 \STATE $ \Delta x = \frac{b - a}{W}$ 
+
+		 
+		 \STATE $ \Delta y = \frac{( d - c)}{H} $ 
+		 
+		 \STATE $ x_j = 0 $
+		 \STATE $y_i = 0$  
+		 
+		 \FOR{ $i = 1$ to $H$ } 
+		 	\STATE $y_i = i\times \Delta y + c$
+		 	\FOR{ $j = 1$ to $W$}
+		 		\STATE $x_j = j \times \Delta x + a$
+		 		
+		 		\WHILE{ $count \leq max\_interaction$ }
+		 			\IF{$x^2 + y^2 \geq 4$}
+		 				\STATE $a_{i,j} = 255$ 
+		 				\STATE \textbf{break}  \COMMENT{Exit WHILE loop.}
+		 			\ENDIF
+		 			\STATE $xtemp = x$
+		 			\STATE $x =  x^2 - y^2 + x_j$
+		 			\STATE $y = 2 \times y + y_i$
+		 			
+		 			\STATE $count = count + 1$
+				\ENDWHILE
+			\ENDFOR
+		\ENDFOR
+		%\RETURN $A$
+	\end{algorithmic}
+	
+	
+	O algoritmo acima, \textit{ComputeMandelbrot} calcula os pontos os quais pertencem ao Conjunto Mandelbrot e armazena em uma matriz $A$, de $m$ linhas e $n$ colunas, que são respectivamente as dimensões da imagem. Se o ponto estiver fora do conjunto, como visto na linha $27$, o elemento $a_{i,j}$ da matriz $A$ assume o valor $255$ que é o valor para cor branca. Na imagem os valores pretos $a_{i,j} = 0$ são os pontos contidos no Conjunto Mandelbrot. Os pontos $x_j$ e $y_i$ são calculados até o número de interações $max\_interaction$ ser atingido (linha $25$) ou ocorrer de $x^2 + y^2 \leq 4$ que encerra o loop \textbf{while} (linha $28$) prosseguindo assim para o próximo pixel a ser calculado na imagem em $A$ para testar o correspondente ponto $(x,y)$ verificando assim o mesmo pertence ao conjunto. O processo é repetido até todos os pixels (células) da imagem contidos em $A$ serem verificados.
+	
+	Note que este é um algoritmo simples sem otimizações, trabalhando também unicamente com imagem preto e branco. Contudo o mesmo pode ser facilmente extendido para gerar imagens coloridas.\\
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.9\linewidth]{../../image}
+		\caption{Imagem gerada pelo algoritmo \textit{"computeMandebrot"} acima implementada.}
+		\label{fig:image}
+	\end{figure}
+	
+\newpage
+
+\begin{thebibliography}{9}
+	\bibitem{CompGraphImage} Computação Gráfica: Imagem, Jonas Gomes e Luiz Velho, IMPA.\\
+	
+	\bibitem{FundCompGraph} Fundamentos de Computação Gráfica, Jonas Gomes e Luiz Velho, Ed. IMPA.\\
+	
+	\bibitem{TrigComplex}  Trigonometria Números Complexos, Manfredo/Augusto César Morgado/Eduardo Wagner, SBM.\\
+	
+	\bibitem{wikimand} Wikipedia \text{https://pt.wikipedia.org/wiki/Conjunto\_de\_Mandelbrot}
+	
+\end{thebibliography}
+
+\end{document}

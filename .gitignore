@@ -5,3 +5,5 @@
 *.snm
 *.out
 *.synctex.gz
+*.bbl
+*.blg
