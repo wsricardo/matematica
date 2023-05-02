@@ -11,3 +11,5 @@
     
     
 ## English Texts
+
+- [Determinant Of a Matrix](https://github.com/wsricardo/matematica/blob/main/AlgebraLinear1/determinante.pdf)
