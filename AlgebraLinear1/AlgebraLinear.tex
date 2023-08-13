@@ -16,15 +16,37 @@
 \begin{document}
 \maketitle
 
+
+\section{Corpo $\mathbb{K}$}
+
+\begin{definicao}
+	Dado um conjunto $\mathbb{K}$ $\subset$ $\mathbb{C}$. Dizemos que $\mathbb{K}$,  é um corpo se satisfaz as condições abaixo,
+	
+	\item (a) Sejam $ x,y \in \mathbb{K}$ então $x+y \in \mathbb{K}$ e $xy \in \mathbb{K}$;
+	
+	\item (b) Se $x \in \mathbb{K}$, então $-x$ também é um elemento de $\mathbb{K}$. Se $x \neq 0 $, então, também, $x^{-1}$ é um elemento de $\mathbb{K}$;
+	
+	\item (c) Existe elementos $0$ e $1$ em $\mathbb{K}$.
+	
+\end{definicao}
+
+Observamos que $\mathbb{R}$ e $\mathbb{C}$ são corpos porém o conjunto dos inteiros $\mathbb{Z}$ não são é fácil verificar-se que o item (b) não se verifica, ou seja, dado $x \in \mathbb{Z}$ temos que $x^{-1} = 1/x  \notin \mathbb{Z}$.
+
 \section{Espaços Vetoriais}
 
 \begin{definicao}
-	Seja $\mathbb{V}$ um conjunto e $+: \mathbb{V}\times\mathbb{V} \rightarrow \mathbb{V}$ e $\cdot : \mathbb{R} \times \mathbb{V} \rightarrow \mathbb{V}$. Dizemos que $(\mathbb{V}, +, \cdot )$ é um \textbf{\textit{espaço vetorial}}, dados $\forall u,v,w \in \mathbb{V}$ e $\beta, \alpha \in \mathbb{R}$, se satisfaz as seguintes propriedades:\\
+	Seja $\mathbb{V}$ sobre um corpo $\mathbb{K}$  um conjunto e operações $+: \mathbb{V}\times\mathbb{V} \rightarrow \mathbb{V}$ e $\cdot : \mathbb{R} \times \mathbb{V} \rightarrow \mathbb{V}$. Dizemos que $(\mathbb{V}, +, \cdot )$ é um \textbf{\textit{espaço vetorial}}, dados $\forall u,v,w \in \mathbb{V}$ e $\beta, \alpha \in \mathbb{R}$, com $ u + v \in \mathbb{V}$ e $\alpha u \in \mathbb{V}$ se satisfaz as seguintes propriedades:\\
 	
-	\item \underline{Comutatividade} $u + v = v + u$\\
-	\item  \underline{Associatividade} $( u + v ) + w = u + (v + w)$\\
-										$\alpha \cdot (\beta \cdot v)  = (\alpha \cdot \beta)\cdot  v$
-	\item \underline{}
+	\item (1). \underline{Comutatividade} $u + v = v + u$;
+	
+	\item (2).  \underline{Associatividade} Têm-se $( u + v ) + w = u + (v + w)$ e $\alpha \cdot (\beta \cdot v)  = (\alpha \cdot \beta)\cdot  v$;
+	
+	\item (3). \underline{Distributividade} $ \alpha \left( u + v \right) = \alpha u + \alpha v$ e $ ( \alpha + \beta ) u = \alpha u + \alpha u$;
+	
+	\item (4) \underline{Elemento Neutro} 
+	
+	\item (5). \underline{Inverso}
+	
 \end{definicao}
 	
 \end{document}
