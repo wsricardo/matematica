@@ -13,3 +13,7 @@
 ## English Texts
 
 - [Determinant Of a Matrix](https://github.com/wsricardo/matematica/raw/main/AlgebraLinear1/determinante.pdf)
+
+## Canal Youtube
+
+[Dimensão Alfa](https://www.youtube.com/@dimensaoalfa)
